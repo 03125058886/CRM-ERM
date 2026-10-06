@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Nexora",
+    "slug": "nexora",
+    "version": "1.0.0",
+    "scheme": "nexora",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#5B4BFF"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.nexora.mobile"
+    },
+    "android": {
+      "package": "app.nexora.mobile",
+      "adaptiveIcon": {
+        "backgroundColor": "#5B4BFF",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-splash-screen",
+        { "image": "./assets/splash-icon.png", "resizeMode": "contain", "backgroundColor": "#5B4BFF" }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

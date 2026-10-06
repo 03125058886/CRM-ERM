@@ -1,0 +1,85 @@
+export interface Option {
+  id: string;
+  label: string;
+}
+
+export const COMPANY_SIZES: Option[] = [
+  { id: "1-5", label: "1 - 5 employees" },
+  { id: "5-20", label: "5 - 20 employees" },
+  { id: "20-50", label: "20 - 50 employees" },
+  { id: "50-250", label: "50 - 250 employees" },
+  { id: "250+", label: "More than 250 employees" },
+];
+
+export const INTERESTS: Option[] = [
+  { id: "company", label: "Use it in my company" },
+  { id: "provider", label: "Use it as a service provider / integrator" },
+  { id: "student", label: "I am a student" },
+  { id: "teacher", label: "I am a teacher" },
+];
+
+export const LANGUAGES: Option[] = [
+  { id: "en", label: "English" },
+  { id: "ur", label: "Urdu" },
+  { id: "ar", label: "Arabic" },
+  { id: "hi", label: "Hindi" },
+  { id: "fr", label: "French" },
+  { id: "es", label: "Spanish" },
+  { id: "de", label: "German" },
+  { id: "it", label: "Italian" },
+  { id: "pt", label: "Portuguese" },
+  { id: "nl", label: "Dutch" },
+  { id: "tr", label: "Turkish" },
+  { id: "ru", label: "Russian" },
+  { id: "zh", label: "Chinese" },
+  { id: "ja", label: "Japanese" },
+  { id: "ko", label: "Korean" },
+  { id: "id", label: "Indonesian" },
+  { id: "ms", label: "Malay" },
+  { id: "bn", label: "Bengali" },
+  { id: "fa", label: "Persian" },
+  { id: "pl", label: "Polish" },
+  { id: "sv", label: "Swedish" },
+  { id: "th", label: "Thai" },
+  { id: "vi", label: "Vietnamese" },
+  { id: "el", label: "Greek" },
+  { id: "he", label: "Hebrew" },
+  { id: "uk", label: "Ukrainian" },
+];
+
+export const COUNTRIES: Option[] = [
+  { id: "AF", label: "Afghanistan" }, { id: "AL", label: "Albania" }, { id: "DZ", label: "Algeria" },
+  { id: "AR", label: "Argentina" }, { id: "AM", label: "Armenia" }, { id: "AU", label: "Australia" },
+  { id: "AT", label: "Austria" }, { id: "AZ", label: "Azerbaijan" }, { id: "BH", label: "Bahrain" },
+  { id: "BD", label: "Bangladesh" }, { id: "BY", label: "Belarus" }, { id: "BE", label: "Belgium" },
+  { id: "BO", label: "Bolivia" }, { id: "BA", label: "Bosnia and Herzegovina" }, { id: "BR", label: "Brazil" },
+  { id: "BG", label: "Bulgaria" }, { id: "KH", label: "Cambodia" }, { id: "CM", label: "Cameroon" },
+  { id: "CA", label: "Canada" }, { id: "CL", label: "Chile" }, { id: "CN", label: "China" },
+  { id: "CO", label: "Colombia" }, { id: "HR", label: "Croatia" }, { id: "CY", label: "Cyprus" },
+  { id: "CZ", label: "Czechia" }, { id: "DK", label: "Denmark" }, { id: "EC", label: "Ecuador" },
+  { id: "EG", label: "Egypt" }, { id: "EE", label: "Estonia" }, { id: "ET", label: "Ethiopia" },
+  { id: "FI", label: "Finland" }, { id: "FR", label: "France" }, { id: "GE", label: "Georgia" },
+  { id: "DE", label: "Germany" }, { id: "GH", label: "Ghana" }, { id: "GR", label: "Greece" },
+  { id: "HK", label: "Hong Kong" }, { id: "HU", label: "Hungary" }, { id: "IS", label: "Iceland" },
+  { id: "IN", label: "India" }, { id: "ID", label: "Indonesia" }, { id: "IQ", label: "Iraq" },
+  { id: "IE", label: "Ireland" }, { id: "IL", label: "Israel" }, { id: "IT", label: "Italy" },
+  { id: "JP", label: "Japan" }, { id: "JO", label: "Jordan" }, { id: "KZ", label: "Kazakhstan" },
+  { id: "KE", label: "Kenya" }, { id: "KW", label: "Kuwait" }, { id: "LV", label: "Latvia" },
+  { id: "LB", label: "Lebanon" }, { id: "LT", label: "Lithuania" }, { id: "LU", label: "Luxembourg" },
+  { id: "MY", label: "Malaysia" }, { id: "MV", label: "Maldives" }, { id: "MT", label: "Malta" },
+  { id: "MX", label: "Mexico" }, { id: "MA", label: "Morocco" }, { id: "NP", label: "Nepal" },
+  { id: "NL", label: "Netherlands" }, { id: "NZ", label: "New Zealand" }, { id: "NG", label: "Nigeria" },
+  { id: "NO", label: "Norway" }, { id: "OM", label: "Oman" }, { id: "PK", label: "Pakistan" },
+  { id: "PA", label: "Panama" }, { id: "PE", label: "Peru" }, { id: "PH", label: "Philippines" },
+  { id: "PL", label: "Poland" }, { id: "PT", label: "Portugal" }, { id: "QA", label: "Qatar" },
+  { id: "RO", label: "Romania" }, { id: "RU", label: "Russia" }, { id: "SA", label: "Saudi Arabia" },
+  { id: "RS", label: "Serbia" }, { id: "SG", label: "Singapore" }, { id: "SK", label: "Slovakia" },
+  { id: "SI", label: "Slovenia" }, { id: "ZA", label: "South Africa" }, { id: "KR", label: "South Korea" },
+  { id: "ES", label: "Spain" }, { id: "LK", label: "Sri Lanka" }, { id: "SE", label: "Sweden" },
+  { id: "CH", label: "Switzerland" }, { id: "TW", label: "Taiwan" }, { id: "TZ", label: "Tanzania" },
+  { id: "TH", label: "Thailand" }, { id: "TN", label: "Tunisia" }, { id: "TR", label: "Turkey" },
+  { id: "UG", label: "Uganda" }, { id: "UA", label: "Ukraine" }, { id: "AE", label: "United Arab Emirates" },
+  { id: "GB", label: "United Kingdom" }, { id: "US", label: "United States" }, { id: "UY", label: "Uruguay" },
+  { id: "UZ", label: "Uzbekistan" }, { id: "VE", label: "Venezuela" }, { id: "VN", label: "Vietnam" },
+  { id: "YE", label: "Yemen" }, { id: "ZM", label: "Zambia" }, { id: "ZW", label: "Zimbabwe" },
+];
