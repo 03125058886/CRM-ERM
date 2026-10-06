@@ -27,6 +27,14 @@ function clean(appId: string, body: Record<string, unknown>, fallbackStage?: str
   return { data: { title, stage, amount, partner, notes } } as const;
 }
 
+/** Seed demo data the first time a workspace is touched. */
+export function ensureSeeded(userId: number, appId: string) {
+  if (Records.count(userId, appId) > 0) return;
+  for (const s of moduleFor(appId).seed) {
+    Records.create(userId, appId, { title: s.title, stage: s.stage, amount: s.amount ?? null, partner: s.partner ?? "", notes: s.notes ?? "" });
+  }
+}
+
 /** GET /apps/:appId/records — seeds demo data on first visit so the workspace is not empty. */
 records.get("/apps/:appId/records", (req, res) => {
   const appId = String(req.params.appId);
@@ -36,11 +44,7 @@ records.get("/apps/:appId/records", (req, res) => {
   const userApps = JSON.parse(u.apps) as string[];
   if (!userApps.includes(appId)) return res.status(403).json({ error: "This app is not installed in your workspace.", code: "not_installed" });
 
-  if (Records.count(u.id, appId) === 0) {
-    for (const s of moduleFor(appId).seed) {
-      Records.create(u.id, appId, { title: s.title, stage: s.stage, amount: s.amount ?? null, partner: s.partner ?? "", notes: s.notes ?? "" });
-    }
-  }
+  ensureSeeded(u.id, appId);
   res.json({ module: moduleFor(appId), records: Records.list(u.id, appId).map(toRecord) });
 });
 

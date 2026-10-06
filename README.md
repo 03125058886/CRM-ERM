@@ -21,6 +21,7 @@ nexora/
 - **Login / Logout** – unverified accounts are sent back to verification. Web keeps the JWT in an httpOnly cookie (never exposed to JS); mobile keeps it in SecureStore.
 - **Forgot / reset password** – emailed code + new password.
 - **Dashboard** – your apps (home menu), add/remove apps, profile settings, change password.
+- **Dashboards** – Odoo-style named dashboards (`/dashboard/dashboards?dashboard_id=1…6`: Overview, Sales, Finance, Operations, People, Marketing) with KPI tiles, records-by-app and value-by-app bars, per-app stage charts, 14-day sparklines and top partners. App switcher in the top bar. Same on mobile.
 - **App workspaces** – every one of the 46 apps opens its own workspace: kanban + list view, pipeline stages (e.g. CRM: New → Qualified → Proposition → Won/Lost), stats, search, create / edit / move / delete records. Seeded with demo data on first open. Same on mobile.
 - **Rate limiting** on all auth endpoints. Password hashing with bcrypt.
 
@@ -97,6 +98,7 @@ See `.env.example`. Important ones:
 | POST   | `/apps/:appId/records`    | `{ title, stage, amount, partner, notes }` |
 | PATCH  | `/records/:id`            | Partial update (e.g. `{ stage }`)       |
 | DELETE | `/records/:id`            |                                         |
+| GET    | `/dashboards/summary`     | Aggregates for every installed app      |
 
 ## Brand
 

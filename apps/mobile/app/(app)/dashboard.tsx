@@ -3,7 +3,7 @@ import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, View } from "rea
 import { router } from "expo-router";
 import Animated, { FadeInDown, FadeInUp } from "react-native-reanimated";
 import * as Haptics from "expo-haptics";
-import { Check, LogOut, Plus, Settings, X } from "lucide-react-native";
+import { Check, LayoutDashboard, LogOut, Plus, Settings, X } from "lucide-react-native";
 import { APP_BY_ID, BRAND, CATALOG, type User } from "@nexora/shared";
 import { api, ApiError } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
@@ -41,6 +41,7 @@ export default function Dashboard() {
               <Text style={{ color: "#fff", fontSize: 26, fontWeight: "800", letterSpacing: -0.4 }}>{u.firstName} 👋</Text>
               <Text style={{ color: "rgba(255,255,255,0.85)", fontSize: 12, marginTop: 4, fontFamily: "monospace" }}>{u.subdomain}{BRAND.domainSuffix}</Text>
             </View>
+            <Pressable onPress={() => router.push("/(app)/dashboards")} style={s.iconBtn}><LayoutDashboard size={20} color="#fff" /></Pressable>
             <Pressable onPress={() => router.push("/(app)/settings")} style={s.iconBtn}><Settings size={20} color="#fff" /></Pressable>
             <Pressable onPress={() => Alert.alert("Sign out?", "", [{ text: "Cancel", style: "cancel" }, { text: "Sign out", style: "destructive", onPress: () => signOut().then(() => router.replace("/")) }])} style={s.iconBtn}><LogOut size={20} color="#fff" /></Pressable>
           </View>
