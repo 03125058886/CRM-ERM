@@ -1,10 +1,10 @@
-# Zuvora
+# Nexora
 
 All-in-one business apps. One login, one database, 46 integrated apps.
 Monorepo with a **web app**, a **mobile app** and the **API** they share.
 
 ```
-zuvora/
+nexora/
 ├─ apps/
 │  ├─ api/      Node 24 + Express 5 + SQLite (built-in node:sqlite) · JWT auth · OTP
 │  ├─ web/      Next.js 16 · Tailwind v4 · Framer Motion · PWA manifest
@@ -16,7 +16,7 @@ zuvora/
 ## Features
 
 - **Trial page** – pick from 46 apps across 9 categories (search, animated selection, sticky bar), then sign up.
-- **Signup** – name, company, auto-suggested `*.zuvora.app` domain with live availability check, email, phone, password, country, language, company size, primary interest, terms.
+- **Signup** – name, company, auto-suggested `*.nexora.app` domain with live availability check, email, phone, password, country, language, company size, primary interest, terms.
 - **Phone verification** – 6-digit OTP, resend via SMS / WhatsApp / Email with cooldown, attempt limits, 10-minute expiry.
 - **Login / Logout** – unverified accounts are sent back to verification. Web keeps the JWT in an httpOnly cookie (never exposed to JS); mobile keeps it in SecureStore.
 - **Forgot / reset password** – emailed code + new password.
@@ -77,7 +77,7 @@ See `.env.example`. Important ones:
 | Variable         | Where  | Purpose                                          |
 | ---------------- | ------ | ------------------------------------------------ |
 | `JWT_SECRET`     | api    | **Change in production.**                        |
-| `DB_PATH`        | api    | SQLite file, default `./data/zuvora.db`          |
+| `DB_PATH`        | api    | SQLite file, default `./data/nexora.db`          |
 | `CORS_ORIGIN`    | api    | Comma-separated allowed origins                  |
 | `API_URL`        | web    | Where the Next.js proxy forwards (server-side)   |
 | `EXPO_PUBLIC_API_URL` | mobile | API base URL for the app                    |

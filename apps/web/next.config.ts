@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@zuvora/shared"],
+  transpilePackages: ["@nexora/shared"],
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,

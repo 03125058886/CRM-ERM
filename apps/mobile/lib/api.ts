@@ -2,7 +2,7 @@ import { Platform } from "react-native";
 import * as SecureStore from "expo-secure-store";
 import Constants from "expo-constants";
 
-const TOKEN_KEY = "zv_session";
+const TOKEN_KEY = "nx_session";
 
 /** Resolve the API base URL: env → Expo dev host (LAN IP) → localhost. */
 function resolveBaseUrl(): string {

@@ -4,7 +4,7 @@ import { Suspense, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, Eye, EyeOff } from "lucide-react";
-import { validateLogin, type PendingVerification, type User } from "@zuvora/shared";
+import { validateLogin, type PendingVerification, type User } from "@nexora/shared";
 import { AuthShell } from "@/components/AuthShell";
 import { Input, Spinner } from "@/components/Field";
 import { useToast } from "@/components/Toast";

@@ -47,7 +47,7 @@ export interface Pending {
   purpose: "verify" | "reset";
   email?: string;
 }
-const PENDING_KEY = "zuvora.pending";
+const PENDING_KEY = "nexora.pending";
 export const pendingStore = {
   get(): Pending | null {
     try { return JSON.parse(sessionStorage.getItem(PENDING_KEY) ?? "null"); } catch { return null; }
@@ -56,7 +56,7 @@ export const pendingStore = {
   clear() { try { sessionStorage.removeItem(PENDING_KEY); } catch {} },
 };
 
-const APPS_KEY = "zuvora.selectedApps";
+const APPS_KEY = "nexora.selectedApps";
 export const selectionStore = {
   get(): string[] {
     try { return JSON.parse(localStorage.getItem(APPS_KEY) ?? "[]"); } catch { return []; }

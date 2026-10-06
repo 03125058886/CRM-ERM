@@ -3,7 +3,7 @@ import { Alert, Modal, Pressable, ScrollView, StyleSheet, Switch, Text, View } f
 import { Stack } from "expo-router";
 import Animated, { FadeInDown } from "react-native-reanimated";
 import { ChevronLeft, ChevronRight, Plus, Trash2, X } from "lucide-react-native";
-import { EVENT_COLORS, type CalendarEvent } from "@zuvora/shared";
+import { EVENT_COLORS, type CalendarEvent } from "@nexora/shared";
 import { api, ApiError } from "@/lib/api";
 import { Button, Input, Screen } from "@/components/ui";
 import { C, font, radius, shadow } from "@/lib/theme";

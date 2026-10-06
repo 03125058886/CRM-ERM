@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
-import type { Option } from "@zuvora/shared";
+import type { Option } from "@nexora/shared";
 
 interface Base { label: string; error?: string; hint?: string; id: string }
 

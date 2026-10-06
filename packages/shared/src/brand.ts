@@ -1,8 +1,8 @@
-/** Zuvora brand tokens - shared by web + mobile. */
+/** Nexora brand tokens - shared by web + mobile. */
 export const BRAND = {
-  name: "Zuvora",
+  name: "Nexora",
   tagline: "Run your whole business from one place.",
-  domainSuffix: ".zuvora.app",
+  domainSuffix: ".nexora.app",
   supportEmail: "farhan2013khan@gmail.com",
   supportPhone: "+92 333 5058886",
 } as const;

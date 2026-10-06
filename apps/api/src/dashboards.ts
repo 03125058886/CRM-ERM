@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { moduleFor, type AppSummary, type DashboardSummary } from "@zuvora/shared";
+import { moduleFor, type AppSummary, type DashboardSummary } from "@nexora/shared";
 import { db } from "./db.js";
 import { requireAuth, currentUser } from "./auth.js";
 import { ensureSeeded } from "./records.js";

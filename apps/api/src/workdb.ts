@@ -1,5 +1,5 @@
 /* Per-app configuration (custom stages) and record chatter notes. */
-import { moduleFor } from "@zuvora/shared";
+import { moduleFor } from "@nexora/shared";
 import { db } from "./db.js";
 
 db.exec(`

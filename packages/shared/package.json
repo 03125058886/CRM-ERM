@@ -1,5 +1,5 @@
 {
-  "name": "@zuvora/shared",
+  "name": "@nexora/shared",
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",

@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Check, Download, Search, Trash2 } from "lucide-react";
-import { CATALOG, type User } from "@zuvora/shared";
+import { CATALOG, type User } from "@nexora/shared";
 import { iconFor } from "@/lib/icons";
 import { api, ApiError } from "@/lib/api";
 import { useToast } from "@/components/Toast";

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { menusFor, type AppDef, type WorkspaceView } from "@zuvora/shared";
+import { menusFor, type AppDef, type WorkspaceView } from "@nexora/shared";
 import { iconFor } from "@/lib/icons";
 
 /** Odoo-style secondary menu bar: app name + dropdown menus (Sales / Leads / Reporting / Configuration…). */

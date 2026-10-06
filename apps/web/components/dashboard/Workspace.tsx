@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowDown, ArrowUp, ChevronLeft, ChevronRight, Columns3, GripVertical, List, Plus, Search, Trash2, X } from "lucide-react";
-import { moduleFor, type AppDef, type ModuleDef, type RecordNote, type RecordRow, type WorkspaceView } from "@zuvora/shared";
+import { moduleFor, type AppDef, type ModuleDef, type RecordNote, type RecordRow, type WorkspaceView } from "@nexora/shared";
 import { api, ApiError } from "@/lib/api";
 import { useToast } from "@/components/Toast";
 import { Spinner } from "@/components/Field";

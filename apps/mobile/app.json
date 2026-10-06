@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Zuvora",
-    "slug": "zuvora",
+    "name": "Nexora",
+    "slug": "nexora",
     "version": "1.0.0",
-    "scheme": "zuvora",
+    "scheme": "nexora",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -15,10 +15,10 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "app.zuvora.mobile"
+      "bundleIdentifier": "app.nexora.mobile"
     },
     "android": {
-      "package": "app.zuvora.mobile",
+      "package": "app.nexora.mobile",
       "adaptiveIcon": {
         "backgroundColor": "#5B4BFF",
         "foregroundImage": "./assets/android-icon-foreground.png",

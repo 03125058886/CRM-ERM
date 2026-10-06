@@ -4,7 +4,7 @@ import { Stack, router, useLocalSearchParams } from "expo-router";
 import Animated, { FadeInDown, FadeInUp } from "react-native-reanimated";
 import * as Haptics from "expo-haptics";
 import { Check, Send, Trash2 } from "lucide-react-native";
-import { APP_BY_ID, moduleFor, type ModuleDef, type RecordNote, type RecordRow } from "@zuvora/shared";
+import { APP_BY_ID, moduleFor, type ModuleDef, type RecordNote, type RecordRow } from "@nexora/shared";
 import { api, ApiError } from "@/lib/api";
 import { Button, Input, Screen } from "@/components/ui";
 import { C, font, radius, shadow } from "@/lib/theme";

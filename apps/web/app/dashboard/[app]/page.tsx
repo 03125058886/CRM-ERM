@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound, redirect } from "next/navigation";
-import { APP_BY_ID } from "@zuvora/shared";
+import { APP_BY_ID } from "@nexora/shared";
 import { getUser } from "@/lib/server";
 import { Workspace } from "@/components/dashboard/Workspace";
 

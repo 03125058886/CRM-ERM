@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Clock, MapPin, Plus, Trash2, X } from "lucide-react";
-import { EVENT_COLORS, type CalendarEvent } from "@zuvora/shared";
+import { EVENT_COLORS, type CalendarEvent } from "@nexora/shared";
 import { api, ApiError } from "@/lib/api";
 import { useToast } from "@/components/Toast";
 import { Input, Spinner } from "@/components/Field";

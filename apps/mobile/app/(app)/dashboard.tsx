@@ -2,7 +2,7 @@ import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
 import { router } from "expo-router";
 import Animated, { FadeInDown, FadeInUp } from "react-native-reanimated";
 import { LogOut } from "lucide-react-native";
-import { APP_BY_ID, BRAND, SYSTEM_APPS } from "@zuvora/shared";
+import { APP_BY_ID, BRAND, SYSTEM_APPS } from "@nexora/shared";
 import { useAuth } from "@/lib/auth";
 import { iconFor } from "@/lib/icons";
 import { Screen } from "@/components/ui";

@@ -2,7 +2,7 @@ import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import { Redirect, router } from "expo-router";
 import Animated, { FadeInDown, FadeInUp } from "react-native-reanimated";
 import { ArrowRight, CreditCard, Gauge, Sparkles } from "lucide-react-native";
-import { BRAND } from "@zuvora/shared";
+import { BRAND } from "@nexora/shared";
 import { useAuth } from "@/lib/auth";
 import { Button, Hero, LogoMark, Screen } from "@/components/ui";
 import { C, font } from "@/lib/theme";

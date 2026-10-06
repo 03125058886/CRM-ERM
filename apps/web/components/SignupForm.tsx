@@ -7,7 +7,7 @@ import { ArrowLeft, Check, Eye, EyeOff, Lock, ShieldCheck, Zap } from "lucide-re
 import {
   ALL_APPS, BRAND, COMPANY_SIZES, COUNTRIES, INTERESTS, LANGUAGES, slugify, validateSignup,
   type FieldErrors, type PendingVerification, type SignupPayload,
-} from "@zuvora/shared";
+} from "@nexora/shared";
 import { api, ApiError, pendingStore } from "@/lib/api";
 import { useToast } from "./Toast";
 import { Input, RadioGroup, Select, Spinner } from "./Field";

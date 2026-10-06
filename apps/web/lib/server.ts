@@ -2,13 +2,13 @@ import "server-only";
 import { cache } from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import type { User } from "@zuvora/shared";
+import type { User } from "@nexora/shared";
 
 const API_URL = process.env.API_URL ?? "http://localhost:4000";
 
 /** Server-side: fetch the signed-in user once per request (deduped via React cache). */
 export const getUser = cache(async (): Promise<User> => {
-  const token = (await cookies()).get("zv_session")?.value;
+  const token = (await cookies()).get("nx_session")?.value;
   if (!token) redirect("/login");
   let res: Response;
   try {

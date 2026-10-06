@@ -6,7 +6,7 @@ import { Eye, EyeOff, Zap } from "lucide-react-native";
 import {
   ALL_APPS, BRAND, COMPANY_SIZES, COUNTRIES, INTERESTS, LANGUAGES, slugify, validateSignup,
   type FieldErrors, type PendingVerification, type SignupPayload,
-} from "@zuvora/shared";
+} from "@nexora/shared";
 import { api, ApiError } from "@/lib/api";
 import { pendingStore, selectionStore } from "@/lib/auth";
 import { iconFor } from "@/lib/icons";

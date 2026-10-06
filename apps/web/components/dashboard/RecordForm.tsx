@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, Check, Clock, MessageSquare, Send, Trash2 } from "lucide-react";
-import { moduleFor, type AppDef, type ModuleDef, type RecordNote, type RecordRow } from "@zuvora/shared";
+import { moduleFor, type AppDef, type ModuleDef, type RecordNote, type RecordRow } from "@nexora/shared";
 import { api, ApiError } from "@/lib/api";
 import { useToast } from "@/components/Toast";
 import { Input, Spinner } from "@/components/Field";

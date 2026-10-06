@@ -7,7 +7,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ChevronDown, Check } from "lucide-react-native";
-import type { Option } from "@zuvora/shared";
+import type { Option } from "@nexora/shared";
 import { C, radius, shadow, font } from "@/lib/theme";
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);

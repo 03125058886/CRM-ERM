@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Bot, Hash, Plus, Send } from "lucide-react";
-import type { Channel, Message, User } from "@zuvora/shared";
+import type { Channel, Message, User } from "@nexora/shared";
 import { api, ApiError } from "@/lib/api";
 import { useToast } from "@/components/Toast";
 

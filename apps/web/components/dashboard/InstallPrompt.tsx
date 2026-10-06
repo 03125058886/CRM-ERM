@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { APP_BY_ID } from "@zuvora/shared";
+import { APP_BY_ID } from "@nexora/shared";
 import { useToast } from "@/components/Toast";
 
 /** /dashboard?install=crm → send the user to the Apps store with that app highlighted. */

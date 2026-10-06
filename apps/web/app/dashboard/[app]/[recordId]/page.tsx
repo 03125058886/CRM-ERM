@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound, redirect } from "next/navigation";
-import { APP_BY_ID, moduleFor } from "@zuvora/shared";
+import { APP_BY_ID, moduleFor } from "@nexora/shared";
 import { getUser } from "@/lib/server";
 import { RecordForm } from "@/components/dashboard/RecordForm";
 

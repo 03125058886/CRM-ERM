@@ -3,12 +3,12 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import {
   validateSignup, validateLogin, SUBDOMAIN_RE, EMAIL_RE, isValidAppId, type SignupPayload, type AuthResponse,
-} from "@zuvora/shared";
+} from "@nexora/shared";
 import { Users, toUser, type UserRow } from "./db.js";
 import { issueOtp, verifyOtp, maskPhone, maskEmail, OTP_TTL_SECONDS, IS_DEV, type OtpChannel } from "./otp.js";
 import { rateLimit } from "./middleware.js";
 
-const JWT_SECRET = process.env.JWT_SECRET ?? "zuvora-dev-secret-change-me";
+const JWT_SECRET = process.env.JWT_SECRET ?? "nexora-dev-secret-change-me";
 const SESSION_TTL = "7d";
 const PENDING_TTL = "15m";
 
@@ -67,7 +67,7 @@ async function sendVerification(user: UserRow, channel: OtpChannel) {
 auth.get("/check-subdomain", (req, res) => {
   const name = String(req.query.name ?? "").toLowerCase();
   if (!SUBDOMAIN_RE.test(name)) return res.json({ available: false, reason: "invalid" });
-  const reserved = ["www", "api", "app", "admin", "mail", "zuvora", "support", "help"];
+  const reserved = ["www", "api", "app", "admin", "mail", "nexora", "support", "help"];
   if (reserved.includes(name)) return res.json({ available: false, reason: "reserved" });
   res.json({ available: !Users.subdomainTaken(name) });
 });

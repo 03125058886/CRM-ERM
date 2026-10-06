@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { CATALOG, COUNTRIES, LANGUAGES, COMPANY_SIZES, INTERESTS, BRAND } from "@zuvora/shared";
+import { CATALOG, COUNTRIES, LANGUAGES, COMPANY_SIZES, INTERESTS, BRAND } from "@nexora/shared";
 import { auth } from "./auth.js";
 import { records } from "./records.js";
 import { dashboards } from "./dashboards.js";

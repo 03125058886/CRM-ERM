@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Building2, Mail, MapPin, Phone, Plus, Search, Trash2, User as UserIcon, X } from "lucide-react";
-import { COUNTRIES, type Contact } from "@zuvora/shared";
+import { COUNTRIES, type Contact } from "@nexora/shared";
 import { api, ApiError } from "@/lib/api";
 import { useToast } from "@/components/Toast";
 import { Input, Select, Spinner } from "@/components/Field";

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { isValidAppId, moduleFor, type RecordRow, type RecordNote } from "@zuvora/shared";
+import { isValidAppId, moduleFor, type RecordRow, type RecordNote } from "@nexora/shared";
 import { Records, type RecordDbRow } from "./db.js";
 import { requireAuth, currentUser } from "./auth.js";
 import { stagesFor, saveStages, Notes, type NoteRow } from "./workdb.js";
@@ -36,7 +36,7 @@ export function ensureSeeded(userId: number, appId: string) {
   if (Records.count(userId, appId) > 0) return;
   for (const s of moduleFor(appId).seed) {
     const r = Records.create(userId, appId, { title: s.title, stage: s.stage, amount: s.amount ?? null, partner: s.partner ?? "", notes: s.notes ?? "" });
-    Notes.add(r.id, "log", "Zuvora", `${moduleFor(appId).noun} created (demo data)`);
+    Notes.add(r.id, "log", "Nexora", `${moduleFor(appId).noun} created (demo data)`);
   }
 }
 

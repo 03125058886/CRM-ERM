@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Grip, Home, LayoutDashboard, LayoutGrid, LogOut, Settings } from "lucide-react";
-import { APP_BY_ID, BRAND, SYSTEM_APPS, type User } from "@zuvora/shared";
+import { APP_BY_ID, BRAND, SYSTEM_APPS, type User } from "@nexora/shared";
 import { Logo } from "@/components/Logo";
 import { iconFor } from "@/lib/icons";
 import { signOut } from "@/lib/api";

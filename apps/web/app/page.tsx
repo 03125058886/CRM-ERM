@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { BRAND } from "@zuvora/shared";
+import { BRAND } from "@nexora/shared";
 import { CreditCard, Gauge, Headset, MessageCircle, PlayCircle, Sparkles } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
