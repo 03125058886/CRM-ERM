@@ -1,7 +1,14 @@
+import { Suspense } from "react";
 import { getUser } from "@/lib/server";
-import { AppsManager } from "@/components/dashboard/AppsManager";
+import { HomeMenu } from "@/components/dashboard/HomeMenu";
+import { InstallPrompt } from "@/components/dashboard/InstallPrompt";
 
 export default async function DashboardPage() {
   const user = await getUser();
-  return <AppsManager initialUser={user} />;
+  return (
+    <>
+      <HomeMenu user={user} />
+      <Suspense><InstallPrompt /></Suspense>
+    </>
+  );
 }

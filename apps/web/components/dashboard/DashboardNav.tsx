@@ -4,16 +4,17 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Grip, LayoutDashboard, LayoutGrid, LogOut, Settings } from "lucide-react";
-import { APP_BY_ID, BRAND, type User } from "@nexora/shared";
+import { Grip, Home, LayoutDashboard, LayoutGrid, LogOut, Settings } from "lucide-react";
+import { APP_BY_ID, BRAND, SYSTEM_APPS, type User } from "@nexora/shared";
 import { Logo } from "@/components/Logo";
 import { iconFor } from "@/lib/icons";
 import { signOut } from "@/lib/api";
 import { useToast } from "@/components/Toast";
 
 const LINKS = [
-  { href: "/dashboard", label: "Apps", icon: LayoutGrid },
+  { href: "/dashboard", label: "Home", icon: Home },
   { href: "/dashboard/dashboards", label: "Dashboards", icon: LayoutDashboard },
+  { href: "/dashboard/apps", label: "Apps", icon: LayoutGrid },
   { href: "/dashboard/settings", label: "Settings", icon: Settings },
 ];
 
@@ -24,7 +25,8 @@ export function DashboardNav({ user }: { user: User }) {
   const [switcher, setSwitcher] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const initials = `${user.firstName[0] ?? ""}${user.lastName[0] ?? ""}`.toUpperCase();
-  const currentApp = APP_BY_ID[path.split("/")[2] ?? ""];
+  const seg = path.split("/")[2] ?? "";
+  const currentApp = APP_BY_ID[seg] ?? SYSTEM_APPS.find((a) => a.id === seg);
 
   useEffect(() => { setSwitcher(false); }, [path]);
   useEffect(() => {
@@ -57,9 +59,8 @@ export function DashboardNav({ user }: { user: User }) {
               >
                 <p className="mb-2 px-1 text-xs font-semibold uppercase tracking-wider text-mist">Your apps</p>
                 <div className="grid max-h-80 grid-cols-4 gap-1 overflow-y-auto">
-                  {user.apps.map((id) => {
-                    const app = APP_BY_ID[id];
-                    if (!app) return null;
+                  {[...SYSTEM_APPS.filter((a) => a.leading), ...user.apps.map((id) => APP_BY_ID[id]).filter(Boolean), ...SYSTEM_APPS.filter((a) => !a.leading)].map((app) => {
+                    const id = app.id;
                     const Icon = iconFor(app.icon);
                     return (
                       <Link key={id} href={`/dashboard/${id}`} role="menuitem" className={`flex flex-col items-center gap-1.5 rounded-xl p-2 text-center transition-colors hover:bg-primary-soft ${currentApp?.id === id ? "bg-primary-soft" : ""}`}>

@@ -20,7 +20,12 @@ nexora/
 - **Phone verification** – 6-digit OTP, resend via SMS / WhatsApp / Email with cooldown, attempt limits, 10-minute expiry.
 - **Login / Logout** – unverified accounts are sent back to verification. Web keeps the JWT in an httpOnly cookie (never exposed to JS); mobile keeps it in SecureStore.
 - **Forgot / reset password** – emailed code + new password.
-- **Dashboard** – your apps (home menu), add/remove apps, profile settings, change password.
+- **Home menu** – Odoo-style launcher on a dotted canvas: Discuss, Calendar, Contacts, your installed apps, Dashboards, Apps, Settings.
+- **Discuss** – channels (#general, #random, Notes to self, create your own) with a message thread and a small bot.
+- **Calendar** – month grid, upcoming list, create / edit / delete events with colours.
+- **Contacts** – people and companies with tags, search, kanban cards, create / edit / delete.
+- **Apps** – app store: install / uninstall any of the 46 apps.
+- **Settings** – profile, change password.
 - **Dashboards** – Odoo-style named dashboards (`/dashboard/dashboards?dashboard_id=1…6`: Overview, Sales, Finance, Operations, People, Marketing) with KPI tiles, records-by-app and value-by-app bars, per-app stage charts, 14-day sparklines and top partners. App switcher in the top bar. Same on mobile.
 - **App workspaces** – every one of the 46 apps opens its own workspace: kanban + list view, pipeline stages (e.g. CRM: New → Qualified → Proposition → Won/Lost), stats, search, create / edit / move / delete records. Seeded with demo data on first open. Same on mobile.
 - **Rate limiting** on all auth endpoints. Password hashing with bcrypt.
@@ -99,6 +104,12 @@ See `.env.example`. Important ones:
 | PATCH  | `/records/:id`            | Partial update (e.g. `{ stage }`)       |
 | DELETE | `/records/:id`            |                                         |
 | GET    | `/dashboards/summary`     | Aggregates for every installed app      |
+| GET/POST | `/discuss/channels`     | Channels (seeded on first use)          |
+| GET/POST | `/discuss/channels/:id/messages` | Thread + send                  |
+| GET/POST | `/calendar/events`      | `?from&to` · create                     |
+| PATCH/DELETE | `/calendar/events/:id` |                                      |
+| GET/POST | `/contacts`             |                                         |
+| PATCH/DELETE | `/contacts/:id`     |                                         |
 
 ## Brand
 

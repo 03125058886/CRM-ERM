@@ -7,7 +7,7 @@ import {
   Package, Factory, ShoppingCart, Wrench, ShieldCheck, Hammer,
   Mail, MessageSquare, ListChecks, Share2,
   Users, Fingerprint, UserPlus, Sun, Star, Car, Banknote,
-  Sparkles, Box, type LucideIcon,
+  Sparkles, Box, MessageCircle, Calendar, BookUser, LayoutDashboard, LayoutGrid, Settings, type LucideIcon,
 } from "lucide-react-native";
 
 export const ICONS: Record<string, LucideIcon> = {
@@ -19,7 +19,7 @@ export const ICONS: Record<string, LucideIcon> = {
   Package, Factory, ShoppingCart, Wrench, ShieldCheck, Hammer,
   Mail, MessageSquare, ListChecks, Share2,
   Users, Fingerprint, UserPlus, Sun, Star, Car, Banknote,
-  Sparkles,
+  Sparkles, MessageCircle, Calendar, BookUser, LayoutDashboard, LayoutGrid, Settings,
 };
 
 export const iconFor = (name: string): LucideIcon => ICONS[name] ?? Box;

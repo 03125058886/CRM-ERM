@@ -4,6 +4,7 @@ import { CATALOG, COUNTRIES, LANGUAGES, COMPANY_SIZES, INTERESTS, BRAND } from "
 import { auth } from "./auth.js";
 import { records } from "./records.js";
 import { dashboards } from "./dashboards.js";
+import { system } from "./system.js";
 
 const app = express();
 const PORT = Number(process.env.PORT ?? 4000);
@@ -28,6 +29,7 @@ app.get("/meta", (_req, res) => {
 app.use("/auth", auth);
 app.use("/", records);
 app.use("/dashboards", dashboards);
+app.use("/", system);
 
 app.use((_req, res) => res.status(404).json({ error: "Not found" }));
 app.use((err: Error & { status?: number; type?: string }, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
