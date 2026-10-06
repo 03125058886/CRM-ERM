@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Alert, Text, View } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
 import { KeyRound, Save, UserRound } from "lucide-react-native";
-import { BRAND, COUNTRIES, LANGUAGES, type User } from "@nexora/shared";
+import { BRAND, COUNTRIES, LANGUAGES, type User } from "@zuvora/shared";
 import { api, ApiError } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
 import { Button, Card, Input, Screen, Select } from "@/components/ui";

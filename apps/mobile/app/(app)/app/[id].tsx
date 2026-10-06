@@ -4,7 +4,7 @@ import { Stack, router, useLocalSearchParams } from "expo-router";
 import Animated, { FadeInDown, FadeInRight, Layout } from "react-native-reanimated";
 import * as Haptics from "expo-haptics";
 import { ChevronLeft, ChevronRight, Plus, Search, Trash2, X } from "lucide-react-native";
-import { APP_BY_ID, moduleFor, type RecordRow } from "@nexora/shared";
+import { APP_BY_ID, moduleFor, type RecordRow } from "@zuvora/shared";
 import { api, ApiError } from "@/lib/api";
 import { iconFor } from "@/lib/icons";
 import { Button, Input, Screen, Select } from "@/components/ui";
@@ -113,7 +113,7 @@ export default function AppWorkspace() {
               const idx = mod.stages.indexOf(r.stage);
               return (
                 <Animated.View key={r.id} entering={FadeInRight.delay(Math.min(i, 8) * 40)} layout={Layout.springify()}>
-                  <Pressable onPress={() => openEdit(r)} style={s.card}>
+                  <Pressable onPress={() => router.push(`/(app)/record/${r.id}`)} onLongPress={() => openEdit(r)} style={s.card}>
                     <View style={{ flex: 1 }}>
                       <Text style={{ fontSize: 15, fontWeight: "700", color: C.ink }}>{r.title}</Text>
                       {r.partner ? <Text style={font.muted}>{r.partner}</Text> : null}

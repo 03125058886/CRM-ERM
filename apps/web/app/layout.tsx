@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { BRAND } from "@nexora/shared";
+import { BRAND } from "@zuvora/shared";
 import { ToastProvider } from "@/components/Toast";
 import "./globals.css";
 

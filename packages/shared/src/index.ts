@@ -6,3 +6,4 @@ export * from "./validation";
 export * from "./modules";
 export * from "./dashboards";
 export * from "./system";
+export * from "./menus";

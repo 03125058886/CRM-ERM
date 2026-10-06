@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BRAND } from "@nexora/shared";
+import { BRAND } from "@zuvora/shared";
 import { Logo } from "./Logo";
 
 const COLS: { title: string; links: string[] }[] = [

@@ -3,7 +3,7 @@ import { Alert, Pressable, Text } from "react-native";
 import { router } from "expo-router";
 import Animated, { FadeInDown, FadeInRight } from "react-native-reanimated";
 import { ArrowRight, KeyRound } from "lucide-react-native";
-import { EMAIL_RE, type User } from "@nexora/shared";
+import { EMAIL_RE, type User } from "@zuvora/shared";
 import { api, ApiError } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
 import { OtpInput } from "@/components/OtpInput";

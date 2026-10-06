@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import type { User } from "@nexora/shared";
+import type { User } from "@zuvora/shared";
 import { api, tokenStore } from "./api";
 
 interface AuthCtx {

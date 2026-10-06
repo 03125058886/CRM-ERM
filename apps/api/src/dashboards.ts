@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { moduleFor, type AppSummary, type DashboardSummary } from "@nexora/shared";
+import { moduleFor, type AppSummary, type DashboardSummary } from "@zuvora/shared";
 import { db } from "./db.js";
 import { requireAuth, currentUser } from "./auth.js";
 import { ensureSeeded } from "./records.js";
+import { stagesFor } from "./workdb.js";
 
 export const dashboards = Router();
 dashboards.use(requireAuth);
@@ -25,8 +26,9 @@ dashboards.get("/summary", (req, res) => {
     const mod = moduleFor(appId);
     const rows = stmts.byStage.all(u.id, appId) as unknown as { stage: string; count: number; amount: number }[];
     const map = new Map(rows.map((r) => [r.stage, r]));
-    const byStage = mod.stages.map((stage) => ({ stage, count: Number(map.get(stage)?.count ?? 0), amount: Number(map.get(stage)?.amount ?? 0) }));
-    const lastStage = mod.stages[mod.stages.length - 1];
+    const stages = stagesFor(u.id, appId);
+    const byStage = stages.map((stage) => ({ stage, count: Number(map.get(stage)?.count ?? 0), amount: Number(map.get(stage)?.amount ?? 0) }));
+    const lastStage = stages[stages.length - 1];
     const perDayRows = stmts.perDay.all(u.id, appId) as unknown as { day: string; count: number }[];
     const perDayMap = new Map(perDayRows.map((r) => [r.day, Number(r.count)]));
     return {

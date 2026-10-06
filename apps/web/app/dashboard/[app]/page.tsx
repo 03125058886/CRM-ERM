@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound, redirect } from "next/navigation";
-import { APP_BY_ID } from "@nexora/shared";
+import { APP_BY_ID } from "@zuvora/shared";
 import { getUser } from "@/lib/server";
 import { Workspace } from "@/components/dashboard/Workspace";
 
@@ -15,5 +16,9 @@ export default async function AppPage({ params }: { params: Promise<{ app: strin
   if (!app) notFound();
   const user = await getUser();
   if (!user.apps.includes(appId)) redirect(`/dashboard?install=${appId}`);
-  return <Workspace app={app} />;
+  return (
+    <Suspense fallback={<div className="h-64 shimmer rounded-2xl" />}>
+      <Workspace app={app} />
+    </Suspense>
+  );
 }

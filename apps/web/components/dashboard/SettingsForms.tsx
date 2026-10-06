@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { KeyRound, Save, UserRound } from "lucide-react";
-import { BRAND, COUNTRIES, LANGUAGES, type User } from "@nexora/shared";
+import { BRAND, COUNTRIES, LANGUAGES, type User } from "@zuvora/shared";
 import { Input, Select, Spinner } from "@/components/Field";
 import { useToast } from "@/components/Toast";
 import { api, ApiError } from "@/lib/api";

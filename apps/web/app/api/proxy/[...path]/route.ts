@@ -2,13 +2,13 @@ import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 
 /**
- * Same-origin proxy to the Nexora API.
+ * Same-origin proxy to the Zuvora API.
  * - Forwards the httpOnly session cookie as a Bearer token.
  * - When the API answers with { token }, stores it in an httpOnly cookie so the
  *   browser never touches the raw JWT.
  */
 const API_URL = process.env.API_URL ?? "http://localhost:4000";
-const COOKIE = "nx_session";
+const COOKIE = "zv_session";
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
 
 async function handle(req: NextRequest, ctx: { params: Promise<{ path: string[] }> }) {

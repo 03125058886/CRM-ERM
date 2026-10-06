@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { APP_BY_ID, SYSTEM_APPS, type User } from "@nexora/shared";
+import { APP_BY_ID, SYSTEM_APPS, type User } from "@zuvora/shared";
 import { iconFor } from "@/lib/icons";
 
 interface Tile { id: string; name: string; icon: string; color: string; href: string }

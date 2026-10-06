@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Mail, MessageSquareText, Phone, ShieldCheck } from "lucide-react";
-import type { PendingVerification, User } from "@nexora/shared";
+import type { PendingVerification, User } from "@zuvora/shared";
 import { AuthShell } from "@/components/AuthShell";
 import { OtpInput } from "@/components/OtpInput";
 import { Spinner } from "@/components/Field";
@@ -47,7 +47,7 @@ export default function VerifyPage() {
       const r = await api<{ user: User }>("/auth/verify", { body: { pendingId: pending.pendingId, code: value } });
       pendingStore.clear();
       selectionStore.clear();
-      toast(`Verified! Welcome to Nexora, ${r.user.firstName} 🎉`, "success");
+      toast(`Verified! Welcome to Zuvora, ${r.user.firstName} 🎉`, "success");
       router.push("/dashboard");
       router.refresh();
     } catch (err) {

@@ -3,7 +3,7 @@ import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View 
 import { Stack } from "expo-router";
 import Animated, { FadeInUp } from "react-native-reanimated";
 import { Building2, Mail, Phone, Plus, Search, Trash2, X } from "lucide-react-native";
-import { COUNTRIES, type Contact } from "@nexora/shared";
+import { COUNTRIES, type Contact } from "@zuvora/shared";
 import { api, ApiError } from "@/lib/api";
 import { Button, Input, Screen, Select } from "@/components/ui";
 import { C, font, radius, shadow } from "@/lib/theme";

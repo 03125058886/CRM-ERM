@@ -1,8 +1,8 @@
 {
-  "name": "nexora",
+  "name": "zuvora",
   "private": true,
   "version": "1.0.0",
-  "description": "Nexora - all-in-one business apps. Web app, mobile app and API.",
+  "description": "Zuvora - all-in-one business apps. Web app, mobile app and API.",
   "workspaces": [
     "apps/*",
     "packages/*"

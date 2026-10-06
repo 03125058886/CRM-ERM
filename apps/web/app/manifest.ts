@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { BRAND } from "@nexora/shared";
+import { BRAND } from "@zuvora/shared";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {

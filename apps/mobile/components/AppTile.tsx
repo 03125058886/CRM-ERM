@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import Animated, { FadeInDown, useAnimatedStyle, useSharedValue, withSpring } from "react-native-reanimated";
 import * as Haptics from "expo-haptics";
 import { Check } from "lucide-react-native";
-import type { AppDef } from "@nexora/shared";
+import type { AppDef } from "@zuvora/shared";
 import { iconFor } from "@/lib/icons";
 import { C, radius, shadow } from "@/lib/theme";
 

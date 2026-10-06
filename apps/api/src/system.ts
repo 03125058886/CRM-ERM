@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { EVENT_COLORS, type CalendarEvent, type Channel, type Contact, type Message } from "@nexora/shared";
+import { EVENT_COLORS, type CalendarEvent, type Channel, type Contact, type Message } from "@zuvora/shared";
 import { requireAuth, currentUser } from "./auth.js";
 import { Discuss, Events, Contacts, type ChannelRow, type MessageRow, type EventRow, type ContactRow, type EventData, type ContactData } from "./sysdb.js";
 
 export const system = Router();
 system.use(requireAuth);
 
-const BOT = "Nexora Bot";
+const BOT = "Zuvora Bot";
 
 /* =============== Discuss =============== */
 const toChannel = (c: ChannelRow): Channel => ({ id: c.id, name: c.name, description: c.description, createdAt: c.created_at, lastMessageAt: c.last_message_at, messageCount: Number(c.message_count) });
@@ -52,8 +52,8 @@ system.post("/discuss/channels/:id/messages", (req, res) => {
   const m = Discuss.post(c.id, `${u.first_name} ${u.last_name}`.trim(), body);
   const extra: Message[] = [];
   // A tiny assistant so the channel feels alive.
-  if (/^\/(help|hello|hi)\b/i.test(body) || /\bnexora bot\b/i.test(body)) {
-    extra.push(toMessage(Discuss.post(c.id, BOT, "Hi! I'm Nexora Bot. Try: open an app from the top-left switcher, or type a note here and it stays in this channel.", true)));
+  if (/^\/(help|hello|hi)\b/i.test(body) || /\bzuvora bot\b/i.test(body)) {
+    extra.push(toMessage(Discuss.post(c.id, BOT, "Hi! I'm Zuvora Bot. Try: open an app from the top-left switcher, or type a note here and it stays in this channel.", true)));
   }
   res.status(201).json({ message: toMessage(m), extra });
 });
@@ -80,7 +80,7 @@ function ensureEvents(userId: number) {
   if (Events.count(userId) > 0) return;
   const d = new Date(); d.setMinutes(0, 0, 0);
   const at = (days: number, hour: number, len = 1) => { const s = new Date(d); s.setDate(s.getDate() + days); s.setHours(hour); const e = new Date(s); e.setHours(hour + len); return { start: s.toISOString(), end: e.toISOString() }; };
-  Events.create(userId, { title: "Welcome call with Nexora", ...at(0, 11), allDay: false, location: "Video call", partner: "Nexora team", notes: "We will walk you through your new workspace.", color: EVENT_COLORS[0] });
+  Events.create(userId, { title: "Welcome call with Zuvora", ...at(0, 11), allDay: false, location: "Video call", partner: "Zuvora team", notes: "We will walk you through your new workspace.", color: EVENT_COLORS[0] });
   Events.create(userId, { title: "Demo for Globex", ...at(2, 15), allDay: false, location: "Globex HQ", partner: "Globex", notes: "", color: EVENT_COLORS[1] });
   Events.create(userId, { title: "Team weekly", ...at(7, 10), allDay: false, location: "Meeting room 2", partner: "", notes: "", color: EVENT_COLORS[2] });
 }

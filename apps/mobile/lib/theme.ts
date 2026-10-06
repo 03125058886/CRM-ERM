@@ -1,4 +1,4 @@
-import { COLORS } from "@nexora/shared";
+import { COLORS } from "@zuvora/shared";
 
 export const C = COLORS;
 

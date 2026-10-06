@@ -3,7 +3,7 @@ import { ActivityIndicator, Alert, Pressable, ScrollView, StyleSheet, Text, View
 import { Stack, router } from "expo-router";
 import Animated, { FadeInDown } from "react-native-reanimated";
 import { ChevronRight } from "lucide-react-native";
-import { APP_BY_ID, DASHBOARDS, moduleFor, type AppSummary, type DashboardSummary } from "@nexora/shared";
+import { APP_BY_ID, DASHBOARDS, moduleFor, type AppSummary, type DashboardSummary } from "@zuvora/shared";
 import { api, ApiError } from "@/lib/api";
 import { iconFor } from "@/lib/icons";
 import { Screen } from "@/components/ui";

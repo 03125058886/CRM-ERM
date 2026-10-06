@@ -4,7 +4,7 @@ import { Stack, router } from "expo-router";
 import Animated, { FadeInUp } from "react-native-reanimated";
 import * as Haptics from "expo-haptics";
 import { Check, Download, Search } from "lucide-react-native";
-import { CATALOG, type User } from "@nexora/shared";
+import { CATALOG, type User } from "@zuvora/shared";
 import { api, ApiError } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
 import { iconFor } from "@/lib/icons";

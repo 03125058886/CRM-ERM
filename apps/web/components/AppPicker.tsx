@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, LayoutGrid, Search, X } from "lucide-react";
-import { ALL_APPS, CATALOG } from "@nexora/shared";
+import { ALL_APPS, CATALOG } from "@zuvora/shared";
 import { selectionStore } from "@/lib/api";
 import { AppTile } from "./AppTile";
 import { Reveal } from "./Reveal";

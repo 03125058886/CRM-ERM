@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, KeyRound } from "lucide-react";
-import { EMAIL_RE, type User } from "@nexora/shared";
+import { EMAIL_RE, type User } from "@zuvora/shared";
 import { AuthShell } from "@/components/AuthShell";
 import { Input, Spinner } from "@/components/Field";
 import { OtpInput } from "@/components/OtpInput";

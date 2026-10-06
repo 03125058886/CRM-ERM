@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowUpRight, LayoutDashboard, RefreshCw } from "lucide-react";
-import { APP_BY_ID, DASHBOARDS, moduleFor, type AppSummary, type DashboardSummary } from "@nexora/shared";
+import { APP_BY_ID, DASHBOARDS, moduleFor, type AppSummary, type DashboardSummary } from "@zuvora/shared";
 import { api, ApiError } from "@/lib/api";
 import { iconFor } from "@/lib/icons";
 import { useToast } from "@/components/Toast";

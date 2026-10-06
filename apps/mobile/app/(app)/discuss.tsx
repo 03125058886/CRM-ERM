@@ -4,7 +4,7 @@ import { Stack } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Animated, { FadeInUp } from "react-native-reanimated";
 import { Bot, Hash, Plus, Send } from "lucide-react-native";
-import type { Channel, Message } from "@nexora/shared";
+import type { Channel, Message } from "@zuvora/shared";
 import { api, ApiError } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
 import { C, font, radius } from "@/lib/theme";

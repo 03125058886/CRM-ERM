@@ -4,7 +4,7 @@ import { router } from "expo-router";
 import Animated, { FadeInDown, ZoomIn } from "react-native-reanimated";
 import * as Haptics from "expo-haptics";
 import { Mail, MessageSquareText, Phone, ShieldCheck } from "lucide-react-native";
-import type { PendingVerification, User } from "@nexora/shared";
+import type { PendingVerification, User } from "@zuvora/shared";
 import { api, ApiError } from "@/lib/api";
 import { pendingStore, selectionStore, useAuth } from "@/lib/auth";
 import { OtpInput } from "@/components/OtpInput";

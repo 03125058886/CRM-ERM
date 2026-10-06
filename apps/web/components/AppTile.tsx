@@ -3,7 +3,7 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import type { AppDef } from "@nexora/shared";
+import type { AppDef } from "@zuvora/shared";
 import { iconFor } from "@/lib/icons";
 
 interface Props {

@@ -3,7 +3,7 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import { router } from "expo-router";
 import Animated, { FadeInDown, SlideInDown, SlideOutDown } from "react-native-reanimated";
 import { ArrowRight, Search } from "lucide-react-native";
-import { CATALOG } from "@nexora/shared";
+import { CATALOG } from "@zuvora/shared";
 import { AppTile } from "@/components/AppTile";
 import { Button, Screen } from "@/components/ui";
 import { selectionStore } from "@/lib/auth";

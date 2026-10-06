@@ -3,7 +3,7 @@ import { Alert, Pressable, Text, View } from "react-native";
 import { router } from "expo-router";
 import Animated, { FadeInDown } from "react-native-reanimated";
 import { ArrowRight, Eye, EyeOff } from "lucide-react-native";
-import { validateLogin, type PendingVerification, type User } from "@nexora/shared";
+import { validateLogin, type PendingVerification, type User } from "@zuvora/shared";
 import { api, ApiError } from "@/lib/api";
 import { pendingStore, useAuth } from "@/lib/auth";
 import { Button, Input, LogoMark, Screen } from "@/components/ui";
