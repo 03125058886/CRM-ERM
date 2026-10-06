@@ -3,8 +3,8 @@ export const BRAND = {
   name: "Zuvora",
   tagline: "Run your whole business from one place.",
   domainSuffix: ".zuvora.app",
-  supportEmail: "hello@zuvora.app",
-  supportPhone: "+1 (555) 010-7788",
+  supportEmail: "farhan2013khan@gmail.com",
+  supportPhone: "+92 333 5058886",
 } as const;
 
 export const COLORS = {

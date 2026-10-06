@@ -59,7 +59,7 @@ export function Workspace({ app }: { app: AppDef }) {
   const open = (r: RecordRow) => router.push(`/dashboard/${app.id}/${r.id}`);
   const setView = (nv: WorkspaceView) => router.replace(`/dashboard/${app.id}?view=${nv}`);
 
-  const titles: Record<WorkspaceView, string> = { kanban: app.id === "crm" ? "My Pipeline" : `${mod.noun} board`, list: app.id === "crm" ? "Leads" : mod.nounPlural, report: `${mod.noun} analysis`, activity: "Activity", stages: "Stages" };
+  const titles: Record<WorkspaceView, string> = { kanban: app.id === "crm" ? "My Pipeline" : app.id === "sales" ? "Quotations" : `${mod.noun} board`, list: app.id === "crm" ? "Leads" : app.id === "sales" ? "Orders" : app.id === "invoicing" ? "Invoices" : mod.nounPlural, report: `${mod.noun} analysis`, activity: "Activity", stages: "Stages" };
 
   return (
     <>

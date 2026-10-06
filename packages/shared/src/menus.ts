@@ -41,6 +41,58 @@ export function menusFor(appId: string): Menu[] {
       ] },
     ];
   }
+  if (appId === "sales") {
+    return [
+      { id: "orders", label: "Orders", items: [
+        { id: "quotations", label: "Quotations", view: "kanban" },
+        { id: "orders", label: "Orders", view: "list" },
+        { id: "new", label: "New quotation", newRecord: true },
+        { id: "customers", label: "Customers", href: "/dashboard/contacts" },
+      ] },
+      { id: "invoice", label: "To Invoice", items: [
+        { id: "to-invoice", label: "Orders to invoice", view: "list" },
+        { id: "invoices", label: "Invoices", href: "/dashboard/invoicing" },
+      ] },
+      { id: "products", label: "Products", items: [
+        { id: "products", label: "Products", href: "/dashboard/ecommerce" },
+        { id: "pricelists", label: "Pricelists", href: "/dashboard/ecommerce" },
+      ] },
+      { id: "reporting", label: "Reporting", items: [
+        { id: "analysis", label: "Sales analysis", view: "report" },
+        { id: "activity", label: "Activity", view: "activity" },
+      ] },
+      { id: "config", label: "Configuration", items: [
+        { id: "stages", label: "Stages", view: "stages" },
+        { id: "settings", label: "Settings", href: "/dashboard/settings" },
+      ] },
+    ];
+  }
+  if (appId === "invoicing") {
+    return [
+      { id: "customers", label: "Customers", items: [
+        { id: "invoices", label: "Invoices", view: "list" },
+        { id: "new", label: "New invoice", newRecord: true },
+        { id: "board", label: "Invoice board", view: "kanban" },
+        { id: "customers", label: "Customers", href: "/dashboard/contacts" },
+      ] },
+      { id: "vendors", label: "Vendors", items: [
+        { id: "bills", label: "Bills", href: "/dashboard/purchase" },
+        { id: "vendors", label: "Vendors", href: "/dashboard/contacts" },
+      ] },
+      { id: "accounting", label: "Accounting", items: [
+        { id: "journals", label: "Journal entries", href: "/dashboard/accounting" },
+        { id: "expenses", label: "Expenses", href: "/dashboard/expenses" },
+      ] },
+      { id: "reporting", label: "Reporting", items: [
+        { id: "analysis", label: "Invoice analysis", view: "report" },
+        { id: "activity", label: "Activity", view: "activity" },
+      ] },
+      { id: "config", label: "Configuration", items: [
+        { id: "stages", label: "Stages", view: "stages" },
+        { id: "settings", label: "Settings", href: "/dashboard/settings" },
+      ] },
+    ];
+  }
   return [
     { id: "main", label: mod.nounPlural, items: [
       { id: "kanban", label: `${mod.noun} board`, view: "kanban" },
