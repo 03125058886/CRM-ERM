@@ -40,6 +40,19 @@ CREATE TABLE IF NOT EXISTS otps (
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 CREATE INDEX IF NOT EXISTS otps_user_purpose ON otps(user_id, purpose, used);
+CREATE TABLE IF NOT EXISTS records (
+  id         INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id    INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  app_id     TEXT NOT NULL,
+  title      TEXT NOT NULL,
+  stage      TEXT NOT NULL,
+  amount     REAL,
+  partner    TEXT NOT NULL DEFAULT '',
+  notes      TEXT NOT NULL DEFAULT '',
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS records_user_app ON records(user_id, app_id);
 `);
 
 export interface UserRow {
@@ -134,4 +147,34 @@ export const Otps = {
   latest: (userId: number, purpose: string) => otpStmts.latest.get(userId, purpose) as OtpRow | undefined,
   bumpAttempts: (id: number) => otpStmts.bumpAttempts.run(id),
   markUsed: (id: number) => otpStmts.markUsed.run(id),
+};
+
+/* ---------- records (per-app workspace data) ---------- */
+export interface RecordDbRow {
+  id: number; user_id: number; app_id: string; title: string; stage: string;
+  amount: number | null; partner: string; notes: string; created_at: string; updated_at: string;
+}
+
+const recStmts = {
+  list: db.prepare("SELECT * FROM records WHERE user_id = ? AND app_id = ? ORDER BY updated_at DESC, id DESC"),
+  count: db.prepare("SELECT COUNT(*) AS n FROM records WHERE user_id = ? AND app_id = ?"),
+  get: db.prepare("SELECT * FROM records WHERE id = ? AND user_id = ?"),
+  insert: db.prepare("INSERT INTO records (user_id, app_id, title, stage, amount, partner, notes) VALUES (?,?,?,?,?,?,?)"),
+  update: db.prepare("UPDATE records SET title=?, stage=?, amount=?, partner=?, notes=?, updated_at=datetime('now') WHERE id = ? AND user_id = ?"),
+  del: db.prepare("DELETE FROM records WHERE id = ? AND user_id = ?"),
+};
+
+export const Records = {
+  list: (userId: number, appId: string) => recStmts.list.all(userId, appId) as unknown as RecordDbRow[],
+  count: (userId: number, appId: string) => Number((recStmts.count.get(userId, appId) as { n: number }).n),
+  get: (id: number, userId: number) => recStmts.get.get(id, userId) as RecordDbRow | undefined,
+  create(userId: number, appId: string, d: { title: string; stage: string; amount: number | null; partner: string; notes: string }): RecordDbRow {
+    const r = recStmts.insert.run(userId, appId, d.title, d.stage, d.amount, d.partner, d.notes);
+    return Records.get(Number(r.lastInsertRowid), userId)!;
+  },
+  update(id: number, userId: number, d: { title: string; stage: string; amount: number | null; partner: string; notes: string }) {
+    recStmts.update.run(d.title, d.stage, d.amount, d.partner, d.notes, id, userId);
+    return Records.get(id, userId);
+  },
+  delete: (id: number, userId: number) => recStmts.del.run(id, userId).changes > 0,
 };

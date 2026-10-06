@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { CATALOG, COUNTRIES, LANGUAGES, COMPANY_SIZES, INTERESTS, BRAND } from "@nexora/shared";
 import { auth } from "./auth.js";
+import { records } from "./records.js";
 
 const app = express();
 const PORT = Number(process.env.PORT ?? 4000);
@@ -24,6 +25,7 @@ app.get("/meta", (_req, res) => {
 });
 
 app.use("/auth", auth);
+app.use("/", records);
 
 app.use((_req, res) => res.status(404).json({ error: "Not found" }));
 app.use((err: Error & { status?: number; type?: string }, _req: express.Request, res: express.Response, _next: express.NextFunction) => {

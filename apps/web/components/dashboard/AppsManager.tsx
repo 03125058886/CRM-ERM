@@ -1,6 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Check, Plus, X } from "lucide-react";
 import { APP_BY_ID, CATALOG, type User } from "@nexora/shared";
@@ -9,12 +11,28 @@ import { api, ApiError } from "@/lib/api";
 import { useToast } from "@/components/Toast";
 import { Spinner } from "@/components/Field";
 
+const MotionLink = motion.create(Link);
+
 export function AppsManager({ initialUser }: { initialUser: User }) {
   const { toast } = useToast();
   const [user, setUser] = useState(initialUser);
   const [open, setOpen] = useState(false);
   const [draft, setDraft] = useState<string[]>(user.apps);
   const [busy, setBusy] = useState(false);
+  const params = useSearchParams();
+  const router = useRouter();
+
+  // /dashboard?install=crm → open the manager with that app pre-selected
+  useEffect(() => {
+    const id = params.get("install");
+    if (id && APP_BY_ID[id] && !user.apps.includes(id)) {
+      setDraft([...user.apps, id]);
+      setOpen(true);
+      toast(`${APP_BY_ID[id].name} is not installed yet. Save to add it.`, "info");
+      router.replace("/dashboard");
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params]);
 
   const installed = useMemo(() => user.apps.map((id) => APP_BY_ID[id]).filter(Boolean), [user.apps]);
   const greeting = (() => { const h = new Date().getHours(); return h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening"; })();
@@ -48,10 +66,10 @@ export function AppsManager({ initialUser }: { initialUser: User }) {
         {installed.map((app, i) => {
           const Icon = iconFor(app.icon);
           return (
-            <motion.a
+            <MotionLink
               key={app.id}
-              href="#"
-              onClick={(e) => { e.preventDefault(); toast(`${app.name} is coming soon in this demo`, "info"); }}
+              href={`/dashboard/${app.id}`}
+              prefetch={false}
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: Math.min(i, 10) * 0.04, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -65,7 +83,7 @@ export function AppsManager({ initialUser }: { initialUser: User }) {
               <span className="mt-3 text-sm font-semibold text-ink">{app.name}</span>
               <span className="mt-0.5 line-clamp-1 text-xs text-slate">{app.blurb}</span>
               <ArrowUpRight className="absolute right-3 top-3 size-4 text-mist opacity-0 transition-opacity group-hover:opacity-100" />
-            </motion.a>
+            </MotionLink>
           );
         })}
         {installed.length === 0 && (

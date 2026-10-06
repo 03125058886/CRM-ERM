@@ -20,7 +20,8 @@ nexora/
 - **Phone verification** – 6-digit OTP, resend via SMS / WhatsApp / Email with cooldown, attempt limits, 10-minute expiry.
 - **Login / Logout** – unverified accounts are sent back to verification. Web keeps the JWT in an httpOnly cookie (never exposed to JS); mobile keeps it in SecureStore.
 - **Forgot / reset password** – emailed code + new password.
-- **Dashboard** – your apps, add/remove apps, profile settings, change password.
+- **Dashboard** – your apps (home menu), add/remove apps, profile settings, change password.
+- **App workspaces** – every one of the 46 apps opens its own workspace: kanban + list view, pipeline stages (e.g. CRM: New → Qualified → Proposition → Won/Lost), stats, search, create / edit / move / delete records. Seeded with demo data on first open. Same on mobile.
 - **Rate limiting** on all auth endpoints. Password hashing with bcrypt.
 
 ## Quick start
@@ -92,6 +93,10 @@ See `.env.example`. Important ones:
 | PATCH  | `/auth/me`                | Update profile                          |
 | PUT    | `/auth/me/apps`           | `{ apps: string[] }`                    |
 | POST   | `/auth/change-password`   |                                         |
+| GET    | `/apps/:appId/records`    | Workspace records (+ module definition) |
+| POST   | `/apps/:appId/records`    | `{ title, stage, amount, partner, notes }` |
+| PATCH  | `/records/:id`            | Partial update (e.g. `{ stage }`)       |
+| DELETE | `/records/:id`            |                                         |
 
 ## Brand
 

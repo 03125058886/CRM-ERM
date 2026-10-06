@@ -57,7 +57,7 @@ export default function Dashboard() {
           const Icon = iconFor(app.icon);
           return (
             <Animated.View key={app.id} entering={FadeInUp.delay(Math.min(i, 10) * 50).springify().damping(18)} style={{ width: "30.5%" }}>
-              <Pressable onPress={() => Alert.alert(app.name, `${app.blurb}\n\n(Demo workspace)`)} style={({ pressed }) => [s.app, pressed && { transform: [{ scale: 0.95 }] }]}>
+              <Pressable onPress={() => router.push(`/(app)/app/${app.id}`)} style={({ pressed }) => [s.app, pressed && { transform: [{ scale: 0.95 }] }]}>
                 <View style={[s.appIcon, { backgroundColor: app.color }]}><Icon size={26} color="#fff" strokeWidth={2} /></View>
                 <Text numberOfLines={1} style={s.appName}>{app.name}</Text>
               </Pressable>
